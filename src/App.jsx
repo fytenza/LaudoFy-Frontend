@@ -173,7 +173,7 @@ function App() {
 
       {/* Rotas públicas */}
       <Route path="/erro" element={<PaginaErro />} />
-      <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
+      <Route path="/" element={<AuthLayout><Login /></AuthLayout>} />
       <Route path="/esqueci-senha" element={<AuthLayout><EsqueciSenha /></AuthLayout>} />
       <Route path="/resetar-senha" element={<AuthLayout><ResetarSenha /></AuthLayout>} />
     </Routes>

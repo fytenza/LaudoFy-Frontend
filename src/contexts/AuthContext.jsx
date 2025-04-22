@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
       csrfToken: null,
       usuario: null 
     });
-    navigate('/login');
+    navigate('/');
   };
 
   // Verifica se o usuário está autenticado
