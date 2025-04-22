@@ -531,7 +531,7 @@ const Dashboard = () => {
                 <div>
                   <h4 className="font-medium text-slate-800">Atualização do Sistema</h4>
                   <p className="text-sm text-slate-500 mt-1">
-                    Nova versão disponível na próxima semana
+                    Sistema atualizado conforme demanda
                   </p>
                 </div>
               </div>

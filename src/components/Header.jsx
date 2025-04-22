@@ -229,7 +229,7 @@ const Header = () => {
             {/* Rodapé do Modal */}
             <div className="px-6 py-4 border-t border-slate-200 bg-slate-50">
               <p className="text-sm text-slate-600">
-                🆘 <strong>Dúvidas?</strong> Entre em contato com o suporte interno ou com o administrador do sistema.
+                🆘 <strong>Dúvidas?</strong> Entre em contato com o suporte interno (suporte@fytenza.com.br) ou com o administrador do sistema.
               </p>
               <div className="mt-2 flex gap-4 text-sm">
                 <a 
