@@ -183,7 +183,7 @@ const Login = () => {
           {/* Rodapé */}
           <div className="mt-6 pt-5 border-t border-slate-100 text-center">
             <p className="text-xs text-slate-400">
-              © {new Date().getFullYear()} Laudofy Health Systems
+              © {new Date().getFullYear()} Fytenza
             </p>
           </div>
         </div>
