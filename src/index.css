@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.react-datepicker {
+    font-size: 0.8rem !important;
+  }
+  
+  .react-datepicker__header {
+    padding-top: 0.5rem !important;
+  }
+  
+  .react-datepicker__month-container {
+    padding: 0.3rem !important;
+  }
+  
+  .react-datepicker__day-name, .react-datepicker__day {
+    width: 1.9rem !important;
+    line-height: 1.9rem !important;
+    margin: 0.15rem !important;
+  }
