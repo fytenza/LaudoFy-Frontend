@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { FiLock, FiArrowLeft, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { useAuth } from '../../contexts/AuthContext';
+import api from '../../api';
 
 const ResetarSenha = () => {
   const [searchParams] = useSearchParams();
@@ -32,7 +33,7 @@ const ResetarSenha = () => {
     setLoading(true);
     
     try {
-      await axios.post('http://localhost:3000/api/auth/resetar-senha', { 
+      await api.post('/auth/resetar-senha', { 
         token, 
         senha 
       });
