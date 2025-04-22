@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://laudofy-backend-production.up.railway.app/api';
+const API_BASE_URL = 'https://laudofy-backend-production-5b0a.up.railway.app/api';
 
 // CSRF Service
 const csrfService = {
