@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FiMail, FiArrowLeft, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { useAuth } from '../../contexts/AuthContext';
+import api from '../../api';
 
 const EsqueciSenha = () => {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ const EsqueciSenha = () => {
     setLoading(true);
     
     try {
-      await axios.post('http://localhost:3000/api/auth/esqueci-senha', { email });
+      await api.post('/auth/esqueci-senha', { email });
       setMensagem('Se o email existir em nosso sistema, você receberá um link para redefinir sua senha.');
     } catch (err) {
       setErro('Erro ao processar solicitação. Por favor, tente novamente.');
