@@ -5,10 +5,8 @@ const API_BASE_URL = 'https://laudofy-backend-production-5b0a.up.railway.app/api
 // CSRF Service
 const csrfService = {
   getToken: () => {
-    const fromCookie = document.cookie.split('; ')
-      .find(row => row.startsWith('XSRF-TOKEN='));
-    return fromCookie ? fromCookie.split('=')[1] : localStorage.getItem('csrfToken');
-  },
+    return localStorage.getItem('csrfToken'); // ← seguro e funciona em mobile
+  },  
 
   refreshToken: async () => {
     try {
