@@ -5,26 +5,27 @@ const API_BASE_URL = 'https://laudofy-backend-production-5b0a.up.railway.app/api
 // CSRF Service
 const csrfService = {
   getToken: () => {
-    const cookie = document.cookie.split('; ')
+    const fromCookie = document.cookie.split('; ')
       .find(row => row.startsWith('XSRF-TOKEN='));
-    return cookie ? cookie.split('=')[1] : null;
+    return fromCookie ? fromCookie.split('=')[1] : localStorage.getItem('csrfToken');
   },
 
   refreshToken: async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/csrf-token`, {
-        withCredentials: true,
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+        withCredentials: true
       });
-      return response.data.csrfToken;
+  
+      const token = response.data.csrfToken;
+      localStorage.setItem('csrfToken', token); // ← armazena manualmente
+  
+      return token;
     } catch (error) {
       console.error('CSRF token refresh failed:', error);
       throw error;
     }
   }
+  
 };
 
 // Axios Instance
