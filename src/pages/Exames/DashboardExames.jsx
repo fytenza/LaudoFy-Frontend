@@ -54,6 +54,7 @@ const DashboardExames = () => {
     { value: 'ECG', label: 'ECG' },
     { value: 'Holter', label: 'Holter' },
     { value: 'Ergometria', label: 'Ergometria' },
+    { value: 'Mapa', label: 'Mapa' },
     { value: 'Outro', label: 'Outro' }
   ];
 
@@ -156,6 +157,7 @@ const DashboardExames = () => {
           'ECG': { bg: 'bg-purple-100', text: 'text-purple-800' },
           'Holter': { bg: 'bg-pink-100', text: 'text-pink-800' },
           'Ergometria': { bg: 'bg-indigo-100', text: 'text-indigo-800' },
+          'Mapa': { bg: 'bg-indigo-100', text: 'text-emerald-800' },
           'Outro': { bg: 'bg-blue-100', text: 'text-blue-800' }
         };
         

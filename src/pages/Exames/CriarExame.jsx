@@ -274,6 +274,7 @@ const CriarExame = () => {
                                 <option value="ECG">Eletrocardiograma (ECG)</option>
                                 <option value="Holter">Holter</option>
                                 <option value="Ergometria">Ergometria</option>
+                                <option value="Mapa">Mapa</option>
                                 <option value="Outro">Outro</option>
                             </select>
                         </div>
