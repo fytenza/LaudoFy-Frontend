@@ -4,18 +4,14 @@ const API_BASE_URL = 'https://laudofy-backend-production-5b0a.up.railway.app/api
 
 // CSRF Service
 const csrfService = {
-  getToken: () => {
-    return localStorage.getItem('csrfToken'); // ← seguro e funciona em mobile
-  },  
+  getToken: () => localStorage.getItem('csrfToken'),
 
   refreshToken: async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/csrf-token`, {
-        withCredentials: true
-      });
+      const response = await axios.get(`${API_BASE_URL}/csrf-token`);
   
       const token = response.data.csrfToken;
-      localStorage.setItem('csrfToken', token); // ← armazena manualmente
+      localStorage.setItem('csrfToken', token); // salva para reutilizar
   
       return token;
     } catch (error) {
@@ -54,9 +50,8 @@ api.interceptors.request.use(async (config) => {
   if (['post', 'put', 'patch', 'delete'].includes(config.method.toLowerCase())) {
     try {
       let token = csrfService.getToken();
-      if (!token) {
-        token = await csrfService.refreshToken();
-      }
+      if (!token) token = await csrfService.refreshToken();
+
       config.headers['X-CSRF-Token'] = token;
     } catch (error) {
       console.error('Failed to attach CSRF token:', error);
